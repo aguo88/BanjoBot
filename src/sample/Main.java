@@ -1,9 +1,6 @@
 package sample;
 
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.geometry.Point2D;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Circle;
@@ -23,9 +20,12 @@ public class Main extends Application {
 
 
         Robot robot = new Robot();
-        robot.moveTo(new Coordinate(12, 0));
+        Coordinate p1 = new Coordinate(-10, 0);
+//        System.out.println(p1.getX());
+//        System.out.println(p1.getY());
+        robot.moveTo(p1);
 
-        Circle point = new Circle(300 + 160, 300 + 120, 1);
+        Circle point = new Circle(300 + 160, 300 + 160, 1);
         layout.getChildren().add(point);
     }
 

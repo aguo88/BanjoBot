@@ -27,6 +27,6 @@ public class Coordinate {
 
     public Coordinate(double x,double y) {
         X = x;
-        Y = x;
+        Y = y;
     }
 }

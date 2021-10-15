@@ -25,14 +25,14 @@ public class Robot {
 
     public void moveTo(Coordinate target) {
         double Q2 = Math.acos((Math.pow(target.getX(),2) + Math.pow(target.getY(),2) - Math.pow(a1,2) - Math.pow(a2,2))/(2 * a1 * a2));
-//        System.out.println(Q2);
-        double Q1 = Math.atan(target.getY()/target.getX()) - Math.atan((a2 * Math.sin(q2))/(a1 + (a2 * Math.cos(q2))));
-//        System.out.println(Q1);
-        Rotate rotate1 = new Rotate(Math.toDegrees(Q1), link1.getX(), link1.getY());
+        System.out.println(Math.toDegrees(Q2));
+        double Q1 = Math.atan(target.getY()/target.getX()) - Math.atan((a2 * Math.sin(Q2))/(a1 + (a2 * Math.cos(Q2))));
+        System.out.println(Math.toDegrees(Q1));
+        Rotate rotate1 = new Rotate(Math.toDegrees(q1 + Q1), link1.getX(), link1.getY());
         q1 = Q1;
         link1.getTransforms().add(rotate1);
         refresh();
-        Rotate rotate2 = new Rotate(Math.toDegrees(Q2 + Q1), link2.getX(), link2.getY());
+        Rotate rotate2 = new Rotate(Math.toDegrees(Q2 + q1), link2.getX(), link2.getY());
         q2 = Q2;
         link2.getTransforms().add(rotate2);
     }
